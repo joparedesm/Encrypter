@@ -36,7 +36,9 @@ const clear = () => {
     btnClear.style.opacity = '0.2';
     btnClear.removeEventListener('click', clear);
     text.disabled = false;
+    text.placeholder = 'Enter your text to be encrypted'
     encryptedText.disabled = true;
+    encryptedText.placeholder = ''
     text.focus();
 }
 
@@ -50,6 +52,11 @@ text.addEventListener('input', () => {
     btnClear.style.cursor = 'pointer';
     btnClear.removeEventListener('click', clear);
     btnClear.addEventListener('click', clear);
+
+    if (text.value === '') {
+        text.placeholder = 'Enter your text to be encrypted'
+        encryptedText.placeholder = ''
+    }
 })
 
 btn.addEventListener('click', () => {
@@ -84,7 +91,9 @@ btn.addEventListener('click', () => {
         btnClear.style.opacity = '0.2';
         btnClear.removeEventListener('click', clear);
         text.disabled = false;
+        text.placeholder = 'Enter your text to be encrypted'
         encryptedText.disabled = true;
+        encryptedText.placeholder = ''
         text.focus();
     }
 })
